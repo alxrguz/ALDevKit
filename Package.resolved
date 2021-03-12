@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit",
+        "state": {
+          "branch": "develop",
+          "revision": "f9dec4789465be27ff516218c94afd0aa229ee00",
+          "version": null
+        }
+      },
+      {
+        "package": "SparrowKit",
+        "repositoryURL": "https://github.com/varabeis/SparrowKit",
+        "state": {
+          "branch": "master",
+          "revision": "23f0b4444cfc81abaa6aaff6817785131695f029",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
