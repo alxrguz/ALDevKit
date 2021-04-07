@@ -9,6 +9,8 @@
 import UIKit
 
 public class ALDecimalTextFieldDelegate: NSObject {
+    public var valueChanged: ((Double) -> Void)?
+    
     public var maximumFractionDigits: Int {
         set { formatter.maximumFractionDigits = newValue }
         get { formatter.maximumFractionDigits }
@@ -94,6 +96,7 @@ extension ALDecimalTextFieldDelegate: UITextFieldDelegate {
         var position = textField.selectedTextRangeOffsetFromEnd
         
         defer {
+            valueChanged?(convertToValue(from: textField.text ?? "") ?? 0)
             lastSymbol = string
             textField.updateSelectedTextRange(lastOffsetFromEnd: position)
         }
