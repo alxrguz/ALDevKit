@@ -12,20 +12,20 @@ open class ALAnimateView: UIView {
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        scale(state: true)
+        animation(state: true)
     }
 
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        scale(state: false)
+        animation(state: false)
     }
 
     public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        scale(state: false)
+        animation(state: false)
     }
     
-    private func scale(state: Bool) {
+    open func animation(state: Bool) {
         guard isEnableAnimate else { return }
         if state == true {
             ALAnimate.spring(time: 0.3, animate: {

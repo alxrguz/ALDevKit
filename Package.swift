@@ -9,7 +9,7 @@ let package = Package(
     products: [ .library(name: "ALDevKit", targets: ["ALDevKit"]) ],
     dependencies: [
         .package(url: "https://github.com/SnapKit/SnapKit", .branch("develop")),
-        .package(url: "https://github.com/varabeis/SparrowKit", .branch("main"))
+        .package(url: "https://github.com/ivanvorobei/SparrowKit", .branch("main"))
     ],
     targets: [ .target(name: "ALDevKit", dependencies: ["SnapKit", "SparrowKit"])]
 )
