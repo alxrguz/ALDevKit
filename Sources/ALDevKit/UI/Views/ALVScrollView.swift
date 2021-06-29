@@ -9,13 +9,13 @@
 import UIKit
 import SnapKit
 
-public class ALVScrollView: UIScrollView {
+public class ALScrollView: UIScrollView {
     // MARK: UI Elements
     public lazy var contentView = UIView()
     public lazy var backgroundView = UIView()
     
     // MARK: Lifecycle
-    public override init(frame: CGRect) {
+    public init(orientation: NSLayoutConstraint.Axis) {
         super.init(frame: .zero)
         delaysContentTouches = false
         
@@ -23,7 +23,12 @@ public class ALVScrollView: UIScrollView {
         addSubview(contentView)
         
         contentView.snp.makeConstraints {
-            $0.edges.width.equalToSuperview()
+            $0.edges.equalToSuperview()
+            if orientation == .horizontal {
+                $0.width.equalToSuperview()
+            } else {
+                $0.height.equalToSuperview()
+            }
         }
     }
     
