@@ -24,7 +24,7 @@ public class ALScrollView: UIScrollView {
         
         contentView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            if orientation == .horizontal {
+            if orientation == .vertical {
                 $0.width.equalToSuperview()
             } else {
                 $0.height.equalToSuperview()
